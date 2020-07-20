@@ -62,10 +62,16 @@ task appStart(type: NpmTask) {
     args = ["start"]
 }
 
+task clearDockerFolder(type: Exec) {
+    commandLine 'cd docker && rm -r *'
+}
+
 task clear(type: Delete) {
     delete 'test_coverage/'
     delete testsExecutedMarkerName
+    delete 'docker/'
 }
+
 appNpmInstall.dependsOn clear
 Unittest.dependsOn appNpmInstall
 appNpmBuild.dependsOn appNpmInstall

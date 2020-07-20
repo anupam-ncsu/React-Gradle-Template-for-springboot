@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import logo from './logo.svg';
 import './App.css'
 
 import GetCitizens from './citizen/GetCitizen';
@@ -12,10 +10,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">Welcome</h1>
-                </header>
+                <h1 className="App-title">React Gradle template</h1>
                 <GetCitizens />
                 <CreateCitizen /> 
                 <EditCitizen />
